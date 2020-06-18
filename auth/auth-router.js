@@ -5,7 +5,7 @@ const generateToken = require("./generateToken");
 const secrets = require("./config/secrets");
 const jwt = require("jsonwebtoken");
 
-// Worked on Postman?
+// Worked on Insomnia
 router.post("/register", (req, res) => {
   const user = req.body;
   user.password = bcrypt.hashSync(user.password, 8);
@@ -22,7 +22,7 @@ router.post("/register", (req, res) => {
     });
 });
 
-// Worked on Postman? 
+// Worked on Insomnia
 router.post("/login", (req, res) => {
   const { username, password } = req.body;
 

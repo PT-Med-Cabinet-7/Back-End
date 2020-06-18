@@ -4,7 +4,7 @@ const helmet = require("helmet");
 
 const authenticate = require("../auth/authenticate-middleware.js");
 const authRouter = require("../auth/auth-router.js");
-const productsRouter = require("../products/products-router.js");
+const productsRouter = require("../strains/strains-router.js");
 
 const server = express();
 
