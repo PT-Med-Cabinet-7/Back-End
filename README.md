@@ -27,16 +27,17 @@
 | user-id  | string  | _required_ and _unique_            |
 
 
-#### Product
+#### Strains
 
 | Field       | Type    | Notes                                                                      |
 | ---------   | ------- | -----------------------------------------------------------------------    |
 | id          | integer | _primary key_ and _autoincrements_                                         |
-| name        | string  | _required_; name of the item                                               |
+| name        | string  | _required_; name of the strain                                             |
 | image_URL   | string  | product image                                                              |
-| quote       | text    | price quote                                                                |
-| description | text    | _required_; description of the cannabis strains                            |
-| flavor      | text    | flavor of the product                                                      |
+| type        | text    | type of strain: Indica, Sativa, Hybrid                                     |
+| description | text    | _required_; description of the cannabis strains, background, etc.          |
+| taste       | text    | flavor of the product                                                      |
+| effects     | text    | different effects obtained                                                 |
 | rating      | string  | rating from 1 to 5 stars                                                   |
 
 ## API
@@ -48,8 +49,9 @@ test account:
 ```json
 {
   "email": "tester@email.com",
+  "password": "test",
   "username": "test123",
-  "password": "test"
+  "role": "provider"
 }
 ```
 
@@ -64,11 +66,11 @@ test account:
 | PUT    | `/api/user/:user_id`        | update user info; requires authorization                                                              | [link](#put-apiusersuser_id)       |
 | DELETE | `/api/user/:user_id`        | delete a user account; requires authorization                                                         | [link](#delete-apiusersuser_id)    |
 | &nbsp; |                             |                                                                                                       |                                    |
-| GET    | `/api/products`             | get products                                                                                          | [link](#get-apiproducts)            |
-| POST   | `/api/products`             | create a new product post; requires `name` and `content`                                              | [link](#post-apiproducts)           |
-| GET    | `/api/products/:product_id` | get a product                                                                                         | [link](#get-apireviewsreview_id)    |
-| PUT    | `/api/products/:product_id` | update a product; change `liked` key to like or unlike a submitted product; requires authorization;   | [link](#put-apiproductsproduct_id)    |
-| DELETE | `/api/products/:product_id`  | delete a product; requires authorization;                                                            | [link](#delete-apiproductsproduct_id) |
+| GET    | `/api/strains`             | get strains                                                                                          | [link](#get-apistrains)            |
+| POST   | `/api/strains`             | create a new product post; requires `name` and `description`                                              | [link](#post-apiproducts)           |
+| GET    | `/api/strains/:strain_id` | get a strain                                                                                         | [link](#get-apireviewsreview_id)    |
+| PUT    | `/api/strains/:strain_id` | update a strain; change `liked` key to like or unlike a submitted product; requires authorization;   | [link](#put-apistrainsstrain_id)    |
+| DELETE | `/api/strains/:strain_id`  | delete a product; requires authorization;                                                            | [link](#delete-apiproductsproduct_id) |
 
 ## Examples
 
@@ -162,7 +164,7 @@ response data
 no content
 ```
 
-#### GET /api/products/:product_id
+#### GET /api/strains/:strain_id
 
 response data
 
@@ -170,24 +172,28 @@ response data
 {
   "id": 1,
   "name": "Name",
-  "quote": "Price quote here",
   "image_URL": "image.com",
-  "content": "About the product text",
-  "approved": false
+  "type": "Type of strain", 
+  "description": "About the product text",
+  "taste": "Taste of smoke",
+  "effects": "Different effects obtained",
+  "rating": 1
 }
 ```
 
-#### PUT /api/products/:product_id
+#### PUT /api/strains/:strain_id
 
 request data
 
 ```json
 {
   "name": "Name",
-  "quote": "Price quote here",
   "image_URL": "image.com",
-  "content": "About the product text",
-  "approved": false
+  "type": "Type of strain", 
+  "description": "About the product text",
+  "taste": "Taste of smoke",
+  "effects": "Different effects obtained",
+  "rating": 1
 }
 ```
 
@@ -197,14 +203,16 @@ response data
 {
   "id": 1,
   "name": "Name",
-  "quote": "Price quote here",
   "image_URL": "image.com",
-  "content": "About the product text",
-  "approved": true
+  "type": "Type of strain", 
+  "description": "About the product text",
+  "taste": "Taste of smoke",
+  "effects": "Different effects obtained",
+  "rating": 1
 }
 ```
 
-#### DELETE /api/products/:product_id
+#### DELETE /api/strains/:strain_id
 
 response data
 
@@ -212,7 +220,7 @@ response data
 no content
 ```
 
-#### GET /api/products
+#### GET /api/strains
 
 response data
 
@@ -221,32 +229,39 @@ response data
   {
     "id": 1,
     "name": "Name",
-    "quote": "Price quote here",
     "image_URL": "image.com",
-    "content": "About the product text",
-    "approved": true
+    "type": "Type of strain", 
+    "description": "About the product text",
+    "taste": "Taste of smoke",
+    "effects": "Different effects obtained",
+    "rating": 1
   },
   {
     "id": 2,
     "name": "Name",
-    "quote": "Price quote here",
     "image_URL": "image.com",
-    "content": "About the product text",
-    "approved": true
+    "type": "Type of strain", 
+    "description": "About the product text",
+    "taste": "Taste of banana",
+    "effects": "Different effects obtained",
+    "rating": 2
   }
 ]
 ```
 
-#### POST /api/products
+#### POST /api/strains
 
 request data
 
 ```json
 {
   "name": "Name",
-  "quote": "Price quote here",
   "image_URL": "image.com",
-  "content": "About the product text"
+  "type": "Type of strain", 
+  "description": "About the product text",
+  "taste": "Taste of smoke",
+  "effects": "Different effects obtained",
+  "rating": 3
 }
 ```
 
@@ -256,10 +271,12 @@ response data
 {
   "id": 1,
   "name": "Name",
-  "quote": "Price quote here",
   "image_URL": "image.com",
-  "content": "About the product text",
-  "approved": false
+  "type": "Type of strain", 
+  "description": "About the product text",
+  "taste": "Taste of smoke",
+  "effects": "Different effects obtained",
+  "rating": 1
 }
 ```
 
@@ -271,10 +288,12 @@ response data
 {
   "id": 1,
   "name": "Name",
-  "quote": "Price quote here",
   "image_URL": "image.com",
-  "content": "About the product text",
-  "approved": true
+  "type": "Type of strain", 
+  "description": "About the product text",
+  "taste": "Taste of smoke",
+  "effects": "Different effects obtained",
+  "rating": 1
 }
 ```
 
