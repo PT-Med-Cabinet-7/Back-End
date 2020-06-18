@@ -12,7 +12,7 @@
 | username | string  | _required_                         |
 | role     | string  | _required_                         |
 
-#### MD
+#### Provider
 
 | Field    | Type    | Notes                              |
 | -------- | ------- | ---------------------------------- |
@@ -29,15 +29,15 @@
 
 #### Product
 
-| Field     | Type    | Notes                                                                      |
-| --------- | ------- | -----------------------------------------------------------------------    |
-| id        | integer | _primary key_ and _autoincrements_                                         |
-| name      | string  | _required_; name of the item                                               |
-| image_URL | string  | product image                                                              |
-| quote     | text    | price quote                                                                |
-| content   | text    | _required_; description of the cannabis strains                            |
-| author    | text    | author of the description                                                  |
-| liked     | boolean | whether or not the tech stuff has been liked; defaults to _false_ on POST  |
+| Field       | Type    | Notes                                                                      |
+| ---------   | ------- | -----------------------------------------------------------------------    |
+| id          | integer | _primary key_ and _autoincrements_                                         |
+| name        | string  | _required_; name of the item                                               |
+| image_URL   | string  | product image                                                              |
+| quote       | text    | price quote                                                                |
+| description | text    | _required_; description of the cannabis strains                            |
+| flavor      | text    | flavor of the product                                                      |
+| rating      | string  | rating from 1 to 5 stars                                                   |
 
 ## API
 
