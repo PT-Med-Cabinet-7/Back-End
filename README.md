@@ -154,7 +154,7 @@ response data
 ```json
 {
   "id": 1,
-  "name": "Name",
+  "name": "Name of strain",
   "image_URL": "image.com",
   "type": "Type of strain", 
   "description": "About the product text",
@@ -170,10 +170,10 @@ request data
 
 ```json
 {
-  "name": "Name",
+  "name": "Name of strain",
   "image_URL": "image.com",
   "type": "Type of strain", 
-  "description": "About the product text",
+  "description": "About the strain text",
   "taste": "Taste of smoke",
   "effects": "Different effects obtained",
   "rating": 1
@@ -185,10 +185,10 @@ response data
 ```json
 {
   "id": 1,
-  "name": "Name",
+  "name": "Name of strain",
   "image_URL": "image.com",
   "type": "Type of strain", 
-  "description": "About the product text",
+  "description": "About the strain text",
   "taste": "Taste of smoke",
   "effects": "Different effects obtained",
   "rating": 1
@@ -211,20 +211,20 @@ response data
 [
   {
     "id": 1,
-    "name": "Name",
+    "name": "Name of strain",
     "image_URL": "image.com",
     "type": "Type of strain", 
-    "description": "About the product text",
+    "description": "About the strain text",
     "taste": "Taste of smoke",
     "effects": "Different effects obtained",
     "rating": 1
   },
   {
     "id": 2,
-    "name": "Name",
+    "name": "Name of strain",
     "image_URL": "image.com",
     "type": "Type of strain", 
-    "description": "About the product text",
+    "description": "About the strain text",
     "taste": "Taste of banana",
     "effects": "Different effects obtained",
     "rating": 2
@@ -238,10 +238,10 @@ request data
 
 ```json
 {
-  "name": "Name",
+  "name": "Name of strain",
   "image_URL": "image.com",
   "type": "Type of strain", 
-  "description": "About the product text",
+  "description": "About the strain text",
   "taste": "Taste of smoke",
   "effects": "Different effects obtained",
   "rating": 3
@@ -256,7 +256,7 @@ response data
   "name": "Name",
   "image_URL": "image.com",
   "type": "Type of strain", 
-  "description": "About the product text",
+  "description": "About the strain text",
   "taste": "Taste of smoke",
   "effects": "Different effects obtained",
   "rating": 1
@@ -273,7 +273,7 @@ response data
   "name": "Name",
   "image_URL": "image.com",
   "type": "Type of strain", 
-  "description": "About the product text",
+  "description": "About the strain text",
   "taste": "Taste of smoke",
   "effects": "Different effects obtained",
   "rating": 1
