@@ -12,21 +12,6 @@
 | username | string  | _required_                         |
 | role     | string  | _required_                         |
 
-#### Provider
-
-| Field    | Type    | Notes                              |
-| -------- | ------- | ---------------------------------- |
-| id       | integer | _foreign key_ and _autoincrements_ |
-| user-id  | string  | _required_ and _unique_            |
-
-#### Patient
-
-| Field    | Type    | Notes                              |
-| -------- | ------- | ---------------------------------- |
-| id       | integer | _foreign key_ and _autoincrements_ |
-| user-id  | string  | _required_ and _unique_            |
-
-
 #### Strains
 
 | Field       | Type    | Notes                                                                      |
@@ -50,8 +35,7 @@ test account:
 {
   "email": "tester@email.com",
   "password": "test",
-  "username": "test123",
-  "role": "provider"
+  "username": "test123"
 }
 ```
 
