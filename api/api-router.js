@@ -6,13 +6,11 @@ const axios = require("axios");
 
 const usersRouter = require("../users/users-router");
 const strainsRouter = require("../strains/strains-router");
-// const savedRouter = require("../saved/saved-router");
 
 const router = express.Router();
 
 router.use("/users", usersRouter);
 router.use("/strains", restricted, strainsRouter);
-//router.use("/saved", restricted, savedRouter);
 
 function restricted(req, res, next) {
   const token = req.headers.token;
