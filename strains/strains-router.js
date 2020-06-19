@@ -1,7 +1,7 @@
 const axios = require("axios");
 const express = require("express");
 const router = require("express").Router();
-// const db = require("./strains-model");
+const Strains = require("./strains-model");
 const jwt = require("jsonwebtoken");
 const secrets = require("../auth/config/secrets");
 

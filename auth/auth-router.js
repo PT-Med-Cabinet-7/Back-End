@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const User = require("./user/user-model");
+const Users = require("../users/users-model");
 const bcrypt = require("bcryptjs");
 const generateToken = require("./generateToken");
 const secrets = require("./config/secrets");
@@ -8,9 +8,9 @@ const jwt = require("jsonwebtoken");
 // Worked on Insomnia
 router.post("/register", (req, res) => {
   const user = req.body;
-  user.password = bcrypt.hashSync(user.password, 8);
+  user.password = bcrypt.hashSync(user.password, 14);
 
-  User.add(user)
+  Users.add(user)
     .then((newUser) => {
       user.id = newUser[0];
       delete user.password;
@@ -26,7 +26,7 @@ router.post("/register", (req, res) => {
 router.post("/login", (req, res) => {
   const { username, password } = req.body;
 
-  User.findBy({ username })
+  Users.findBy({ username })
     .first()
     .then((user) => {
       if (user && bcrypt.compareSync(password, user.password)) {
