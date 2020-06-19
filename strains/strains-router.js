@@ -1,6 +1,9 @@
 const axios = require("axios");
-
+const express = require("express");
 const router = require("express").Router();
+// const db = require("./strains-model");
+const jwt = require("jsonwebtoken");
+const secrets = require("../auth/config/secrets");
 
 router.get("/", (req, res) => {
   const requestOptions = {
@@ -8,12 +11,12 @@ router.get("/", (req, res) => {
   };
 
   axios
-    .get("https://icanhazdadjoke.com/search", requestOptions)
+    .get("https://www.cannabisreports.com/api/", requestOptions)
     .then((response) => {
       res.status(200).json(response.data.results);
     })
     .catch((err) => {
-      res.status(500).json({ message: "Error Fetching Products", error: err });
+      res.status(500).json({ message: "Error Fetching Strains", error: err });
     });
 });
 
