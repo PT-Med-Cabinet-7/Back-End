@@ -12,7 +12,7 @@ const server = express();
 
 server.use(helmet());
 server.use(cors());
-server.use(express.json());
+server.use(express.json()); // body parser used to do express' job
 server.use('/api', apiRouter);
 
 server.use("/api/auth", authRouter);
