@@ -27,7 +27,7 @@
 
 ## API
 
-BASE URL: https://bw-med-cabinet-7.herokuapp.com/
+BASE URL: http://ptmc7.herokuapp.com/
 
 test account:
 
