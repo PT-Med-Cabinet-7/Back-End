@@ -10,6 +10,7 @@
 | email    | string  | _required_ and _unique_            |
 | password | string  | _required_                         |
 | username | string  | _required_                         |
+| role     | string  | _required_                         |
 
 #### Strains
 
@@ -34,7 +35,8 @@ test account:
 {
   "email": "tester@email.com",
   "password": "test",
-  "username": "test123"
+  "username": "test123",
+  "role": "patient"
 }
 ```
 
@@ -65,7 +67,8 @@ request data:
 {
   "email": "username@email.com",
   "password": "password",
-  "username": "Name"
+  "username": "Name",
+  "role": "provider"
 }
 ```
 
@@ -114,7 +117,8 @@ response data
 {
   "id": 1,
   "email": "username@email.com",
-  "username": "Name"
+  "username": "Name",
+  "role": "provider"
 }
 ```
 
