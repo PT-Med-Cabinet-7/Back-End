@@ -8,6 +8,9 @@ exports.up = function(knex) {
         .notNullable()
         .unique()
       tbl
+        .string('role', 255)
+        .notNullable()
+      tbl
         .string('password', 255)
         .notNullable()
       tbl
