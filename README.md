@@ -27,7 +27,7 @@
 
 ## API
 
-BASE URL: http://ptmc7.herokuapp.com/
+BASE URL: http://ptmc7.herokuapp.com
 
 test account:
 
