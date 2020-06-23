@@ -3,8 +3,7 @@ const secret = require("./config/secrets");
 
 function generateToken(user) {
   const payload = {
-    user_id: user.id,
-    username: user.username,
+    username: user.username
   };
 
   const options = {
