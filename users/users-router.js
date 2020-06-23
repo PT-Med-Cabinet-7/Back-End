@@ -8,7 +8,7 @@ const router = express.Router()
 // GET request - 200 OK on Insomnia
 // /api/users
 router.get("/", (req, res) => {
-  Users.find()
+  Users.getAll()
     .then(users => {
       res.json(users)
     })

@@ -12,6 +12,9 @@ module.exports = {
 
 function add(user) {
   return db("users").insert(user)
+    .then(ids => {
+      { return findById(ids[0]) }
+    })
 }
 
 function getAll() {
@@ -19,11 +22,7 @@ function getAll() {
 }
 
 function find() {
-  return db("users").select("id", "username", "email")
-}
-
-function findBy(username) {
-  return db("users").where(username)
+  return db("users").select("id", "username").orderBy("id")
 }
 
 function findById(id) {
@@ -32,8 +31,8 @@ function findById(id) {
 
 function findBy(filter) {
   return db("users")
-    .select("id", "username", "password")
     .where(filter)
+    .orderBy("id")
 }
 
 async function update(changes, id) {
