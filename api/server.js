@@ -3,7 +3,7 @@ const apiRouter = require("./api-router");
 const cors = require("cors");
 const helmet = require("helmet");
 
-// const authenticate = require("../auth/authenticate-middleware");
+const authenticate = require("../auth/authenticate-middleware");
 const authRouter = require("../auth/auth-router");
 const usersRouter = require("../users/users-router")
 // const strainsRouter = require("../strains/strains-router");
@@ -16,7 +16,7 @@ server.use(express.json()); // body parser used to do express' job
 server.use('/api', apiRouter);
 
 server.use("/api/auth", authRouter);
-server.use("/api/users", usersRouter);
+server.use("/api/users", authenticate, usersRouter);
 // server.use("/api/strains", authenticate, strainsRouter);
 
 // Worked on Insomnia
