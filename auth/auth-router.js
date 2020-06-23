@@ -12,9 +12,9 @@ router.post("/register", (req, res) => {
 
   Users.add(user)
     .then((newUser) => {
-      user.id = newUser[0];
+      // user.id = newUser[0];
       delete user.password;
-      // Workedconst token = generateToken(user);
+      // const token = generateToken(user);
       res.status(201).json({ user: user });
     })
     .catch((err) => {
