@@ -2,9 +2,9 @@ const router = require("express").Router();
 const Users = require("../users/users-model");
 const bcrypt = require("bcryptjs");
 const generateToken = require("./generateToken");
-const secrets = require("./config/secrets");
-const jwt = require("jsonwebtoken");
-const authMiddleware = require("./authenticate-middleware");
+// const secrets = require("./config/secrets");
+// const jwt = require("jsonwebtoken");
+// const authMiddleware = require("./authenticate-middleware");
 
 // Worked on Insomnia
 router.post("/register", (req, res) => {
@@ -24,7 +24,7 @@ router.post("/register", (req, res) => {
 });
 
 // Worked on Insomnia
-router.post("/login", authMiddleware, (req, res) => {
+router.post("/login", (req, res) => {
   const { username, password } = req.body;
 
   Users.findBy({ username })
